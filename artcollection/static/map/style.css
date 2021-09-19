@@ -1,19 +1,18 @@
 img
 {
-    width: 100%;
+    width: 50%;
 
 }
 
 .content
 {
    margin: auto;
-   display: grid;
 }
 
 body
 {
-background: green url("green.jpeg") no-repeat;
-     background-size: 200%;
+background: green url("new haven.jpeg") no-repeat;
+     background-size: 100%;
      background-position: center center;
      background-attachment: fixed;
     text-align: center;
