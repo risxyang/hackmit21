@@ -16,6 +16,8 @@ from artcollection.models import SubmissionModel
 def gallery(request):
     path = "media/images/"
     img_list = os.listdir(path)
+    if '.DS_Store' in img_list:
+        img_list.remove('.DS_Store')
     print(img_list)
     metadata = []
 
