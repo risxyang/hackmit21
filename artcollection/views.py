@@ -5,21 +5,19 @@ from .models import SubmissionModel
 import os
 
 
-def index(request):
-    name = request.GET.get("name") or "world"
-    return render(request, "base.html", {"name": name})
+# def index(request):
+#     name = request.GET.get("name") or "world"
+#     return render(request, "base.html", {"name": name})
 
-def search(request):
-    city = request.GET.get("search")
-    return render(request, "search_results.html", {"city": city})
+def gallery(request):
+    path = "media/images/"
+    img_list = os.listdir(path)
+    print(img_list)
+    # metadata = []
+    #
+    # for pic in img_list:
 
-def upload(request):
-    if request.method == 'POST':
-        save_path = os.path.join(settings.MEDIA_ROOT, request.FILES["file_upload"].name)
-        with open(save_path, "wb") as output_file:
-            for chunk in request.FILES["file_upload"].chunks():
-                output_file.write(chunk)
-    return render(request, "upload_art.html")
+    return render(request, 'gallery.html', {'imgs': img_list})
 
 def upload_form(request):
     instance = None
@@ -37,3 +35,4 @@ def upload_form(request):
         instance.zip = form.cleaned_data["zip"]
         instance.save()
     return render(request, "django_form_upload_art.html", {"form": form, "instance":instance})
+

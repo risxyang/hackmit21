@@ -21,9 +21,7 @@ import artcollection.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', artcollection.views.index),
-    path('city-search', artcollection.views.search),
-    path('upload-art', artcollection.views.upload),
+    path('', artcollection.views.gallery),
     path('django-form-upload-art', artcollection.views.upload_form)
 ]
 if settings.DEBUG:

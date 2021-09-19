@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Find some local street art!</title>
 </head>
 <body>
-$END$
+    <h1>Find some local street art!</h1>
 </body>
+    <div style="width:100%">
+      {% for img in imgs %}
+          <div style="float:left; width:500px; height:500px;">
+              <img src="../media/images/{{ img }}">
+          </div>
+      {% endfor%}
+    </div>
 </html>
