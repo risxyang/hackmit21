@@ -14,7 +14,6 @@ Users can submit a photo of a local work of street art with an address and descr
 ### Further points for development (that we couldn't figure out in time for our hackathon submission): 
 - Moderation (admin approval before submissions can show up on the site)
 - user/client authentication
-- maps integration (a fair amount of work was done on this already, but it was too complicated for the current iteration of this project) (delete this time if we actually do finish on time)
 
 
 ### how to run:
