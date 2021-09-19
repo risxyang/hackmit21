@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/artcollection/style.css' %}">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +9,19 @@
     <title>Django form image upload</title>
 </head>
 <body>
-    <h1>Django form image upload</h1>
+    <div id="bglayer">    </div>
+    <div id="bglayer2">    </div>
+        <div id="upload-form">
+            <div class="whitebg"><h1>Image </br> Upload</h1></div>
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-    {% if instance %}
-        <img src="{{ instance.image_field.url }}">
-    {% endif %}
+        <form id ="upload-form-data" method="post" enctype="multipart/form-data">
+            <div class="whitebg">{% csrf_token %}</div>
+            <div class="whitebg">{{ form.as_p }}</div>
+            <div class="whitebg"><button class="button" type="submit">Submit</button></div>
+        </form>
+        {% if instance %}
+            <img src="{{ instance.image_field.url }}">
+        {% endif %}
+    </div>
 </body>
 </html>
