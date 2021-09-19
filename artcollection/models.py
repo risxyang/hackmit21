@@ -7,4 +7,4 @@ class SubmissionModel(models.Model):
     street = models.CharField(max_length=100, help_text="Street")
     city = models.CharField(max_length=100, help_text="City")
     state = models.CharField(max_length=100, help_text="State")
-    zip = models.IntegerField(help_text="Zipcode")
+    zip = models.IntegerField(help_text="Zipcode", default=0)
