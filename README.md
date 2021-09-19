@@ -9,7 +9,7 @@ This was our group's first experience trying to develop using django, and so we 
 # STREETSTAGRAM!
 
 
-Users can submit a photo of a neat piece of local color with an address and description. The end goal is to aggregate and map out points of interest provide a one-stop shop for interested adventurers to seek out hidden gems to explore. 
+Users can submit a photo of a local work of street art with an address and description. The end goal is to aggregate and map out points of interest provide a one-stop shop for interested adventurers to seek out hidden gems to explore. 
 
 ### Further points for development (that we couldn't figure out in time for our hackathon submission): 
 - Moderation (admin approval before submissions can show up on the site)
