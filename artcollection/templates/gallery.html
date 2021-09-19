@@ -8,9 +8,10 @@
     <h1>Find some local street art!</h1>
 </body>
     <div style="width:100%">
-      {% for img in imgs %}
+      {% for img in mylist %}
           <div style="float:left; width:500px; height:500px;">
-              <img src="../media/images/{{ img }}">
+              <img src="../media/images/{{ img.0 }}">
+<!--              {{img.1}}-->
           </div>
       {% endfor%}
     </div>

@@ -1,9 +1,11 @@
+from typing import Any, Tuple, Iterator
+
 from django.shortcuts import render
 from django.conf import settings
 from .forms import UploadForm
 from .models import SubmissionModel
 import os
-
+from artcollection.models import SubmissionModel
 
 # def index(request):
 #     name = request.GET.get("name") or "world"
@@ -13,11 +15,22 @@ def gallery(request):
     path = "media/images/"
     img_list = os.listdir(path)
     print(img_list)
-    # metadata = []
-    #
-    # for pic in img_list:
+    metadata = []
 
-    return render(request, 'gallery.html', {'imgs': img_list})
+    for pic in img_list:
+        title = pic.split('.')
+        val = "images/"+title[0]
+        print(val)
+        name = SubmissionModel.objects.filter(image_field__startswith = val)[0].name
+        city = SubmissionModel.objects.filter(image_field__startswith = val)[0].city
+        street = SubmissionModel.objects.filter(image_field__startswith = val)[0].street
+        state = SubmissionModel.objects.filter(image_field__startswith = val)[0].state
+        zipcode = SubmissionModel.objects.filter(image_field__startswith = val)[0].zip
+        metadata.append(",".join([name, city, street, state, str(zipcode)]))
+
+    mylist = zip(img_list, metadata)
+    context = {'mylist': mylist}
+    return render(request, 'gallery.html', context)
 
 def upload_form(request):
     instance = None
