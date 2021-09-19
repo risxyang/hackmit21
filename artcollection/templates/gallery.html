@@ -13,11 +13,11 @@
     <a href="http://127.0.0.1:8000/django-form-upload-art">Upload Art!</a>
     <a href="http://127.0.0.1:8000/map">Map!</a>
     {% for img in mylist %}
-    <div style="width:80%" class="content">
-          <div style="float:left; width:500px; height:500px;">
+    <div class="content">
+          <div>
               <img src="../media/images/{{ img.0 }}">
-              {{img.1}}
           </div>
+        <div class="metadata">{{img.1}}</div>
       {% endfor%}
     </div>
 </body>

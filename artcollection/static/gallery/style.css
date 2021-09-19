@@ -1,17 +1,27 @@
 img
 {
-    width: 95%;
+    width: 50%;
 
 }
 
 .content
 {
    margin: auto;
+   display: grid;
 }
 
 body
 {
+background: green url("green.jpeg") no-repeat;
+     background-size: 200%;
+     background-position: center center;
+     background-attachment: fixed;
     text-align: center;
+     font-family: Georgia, serif;
+ font-size: 20px;
+    color: black;
+    font-style: italic;
+    width: 100%;
 }
 
 h1
@@ -22,5 +32,14 @@ h1
     font-size: 90px;
     color: black;
     background: white;
+
+}
+
+.metadata
+{
+    margin: 5%;
+    padding: 2%;
+    background: white;
+
 
 }
