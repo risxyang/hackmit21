@@ -1,12 +1,24 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '../static/map/style.css' %}">
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Map!</title>
+    <title>Map of local street art!</title>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>Street Art in New Haven!</h1>
     <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
 src="https://www.google.com/maps/embed/v1/search?q=murals+near+me&key=AIzaSyDf_9RiBvP-mX5qmEgyUa02k2F8l4TnsU4"></iframe>
+=======
+    <div class="content">
+    <h1>Find New Haven street art!</h1>
+    <img src={{marker}}>
+    </div>
+>>>>>>> 42cb71266bfc27d851507df3841e601790669398
 </body>
 </html>
