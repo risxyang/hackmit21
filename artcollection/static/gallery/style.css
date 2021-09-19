@@ -1,0 +1,26 @@
+img
+{
+    width: 95%;
+
+}
+
+.content
+{
+   margin: auto;
+}
+
+body
+{
+    text-align: center;
+}
+
+h1
+{
+ font-style: normal;
+    text-transform: uppercase;
+    font-family: Helvetica, sans-serif;
+    font-size: 90px;
+    color: black;
+    background: white;
+
+}
