@@ -22,7 +22,8 @@ import artcollection.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', artcollection.views.gallery),
-    path('django-form-upload-art', artcollection.views.upload_form)
+    path('django-form-upload-art', artcollection.views.upload_form),
+    path('map', artcollection.views.map)
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
