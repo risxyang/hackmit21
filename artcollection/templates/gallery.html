@@ -1,6 +1,7 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static '../static/gallery/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '../static/gallery/style.css' %}"
+      xmlns="http://www.w3.org/1999/html">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,12 +9,14 @@
     <meta charset="UTF-8">
     <title>Find Urban Art</title>
 </head>
-    <h1></br> New Haven street art</h1>
+    <h1> New Haven </br> street art</h1>
 <body>
     <div class="metadata">
         <h3><a href="http://127.0.0.1:8000/django-form-upload-art">Upload Art!</a></h3>
         <h3><a href="http://127.0.0.1:8000/map">Map!</a></h3>
     </div>
+    <img src={{marker}} class="mapimg">
+    <div class="metadata"> <h2>Gallery Map</h2> </div>
     {% for img in mylist %}
     <div class="content">
           <div>
@@ -22,5 +25,6 @@
         <div class="metadata">{{img.1}}</div>
       {% endfor%}
     </div>
+
 </body>
 </html>

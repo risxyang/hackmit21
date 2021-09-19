@@ -16,6 +16,8 @@ from artcollection.models import SubmissionModel
 def gallery(request):
     path = "media/images/"
     img_list = os.listdir(path)
+    if '.DS_Store' in img_list:
+        img_list.remove('.DS_Store')
     print(img_list)
     metadata = []
 
@@ -31,30 +33,7 @@ def gallery(request):
         metadata.append(", ".join([name, city, street, state, str(zipcode)]))
 
     mylist = zip(img_list, metadata)
-    context = {'mylist': mylist}
-    return render(request, 'gallery.html', context)
 
-
-def upload_form(request):
-    instance = None
-    if request.method == 'POST':
-        form = UploadForm(request.POST, request.FILES)
-    else:
-        form = UploadForm()
-    if form.is_valid():
-        instance = SubmissionModel()
-        instance.image_field = form.cleaned_data["image_upload"]
-        instance.name = form.cleaned_data["name"]
-        instance.street = form.cleaned_data["street"]
-        instance.city = form.cleaned_data["city"]
-        instance.state = form.cleaned_data["state"]
-        instance.zip = form.cleaned_data["zip"]
-        instance.save()
-    return render(request, "django_form_upload_art.html", {"form": form, "instance": instance})
-
-
-def map(request):
-    name = request.GET.get("name") or "world"
     address_elements = SubmissionModel.objects.values_list('street', 'city', 'state')
     latlong_list = []
     for i in range(len(address_elements)):
@@ -77,5 +56,27 @@ def map(request):
         location += individual_marker
         location += str(latlong_list[i][0]) + "," + str(latlong_list[i][1])
         location += "&"
+    context = {'mylist': mylist, "marker": base_url_marker + location + ending}
+    return render(request, 'gallery.html', context)
 
-    return render(request, "map.html", {"marker": base_url_marker + location + ending})
+
+def upload_form(request):
+    instance = None
+    if request.method == 'POST':
+        form = UploadForm(request.POST, request.FILES)
+    else:
+        form = UploadForm()
+    if form.is_valid():
+        instance = SubmissionModel()
+        instance.image_field = form.cleaned_data["image_upload"]
+        instance.name = form.cleaned_data["name"]
+        instance.street = form.cleaned_data["street"]
+        instance.city = form.cleaned_data["city"]
+        instance.state = form.cleaned_data["state"]
+        instance.zip = form.cleaned_data["zip"]
+        instance.save()
+    return render(request, "django_form_upload_art.html", {"form": form, "instance": instance})
+
+
+def map(request):
+    return render(request, "map.html")
