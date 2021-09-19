@@ -8,12 +8,13 @@
     <meta charset="UTF-8">
     <title>Find some local street art</title>
 </head>
-<body>
     <h1>Find some </br> local street art</h1>
+<body>
+    {% for img in mylist %}
     <div style="width:80%" class="content">
-      {% for img in imgs %}
           <div style="float:left; width:500px; height:500px;">
-              <img src="../media/images/{{ img }}">
+              <img src="../media/images/{{ img.0 }}">
+              {{img.1}}
           </div>
       {% endfor%}
     </div>
