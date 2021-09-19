@@ -17,5 +17,5 @@ Users can submit a photo of a local work of street art with an address and descr
 
 
 ### how to run:
- - a virtual environment should be included in the repo. activate it (streetstagram) and run `python(3) manage.py runserver`. Then, in your browser, access localhost:8000; to submit something and have it show up in the gallery, access localhost:(insert link name here)
+ - a virtual environment should be included in the repo. activate it (streetstagram) and run `python(3) manage.py runserver`. If you get an error message, try using the `pip install -r requirements.txt` instruction after activating the virtual enviroment to update dependencies. Then, in your browser, access http://127.0.0.1:8000; to submit something and have it show up in the gallery, access http://127.0.0.1:8000/django-form-upload-art; to play with an interactive map of New Haven with art labeled, access http://127.0.0.1:8000/map.
  - our brains are fried and we may have missed some links or typed out the command incorrectly. Run the server as you would normally run a django server locally :) thank you for your understanding
