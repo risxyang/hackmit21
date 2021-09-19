@@ -31,6 +31,9 @@ def upload_form(request):
         instance = SubmissionModel()
         instance.image_field = form.cleaned_data["image_upload"]
         instance.name = form.cleaned_data["name"]
-        instance.name = form.cleaned_data["address"]
+        instance.name = form.cleaned_data["street"]
+        instance.name = form.cleaned_data["city"]
+        instance.name = form.cleaned_data["state"]
+        instance.name = form.cleaned_data["zip"]
         instance.save()
     return render(request, "django_form_upload_art.html", {"form": form, "instance":instance})
